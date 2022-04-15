@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.qiyc.la.databinding.ActivityMainBinding
+import okhttp3.OkHttpClient
 
 class MainActivity : AppCompatActivity() {
 
