@@ -25,6 +25,11 @@ class MainActivity : AppCompatActivity() {
                 intent.setClass(this,BindingActivity()::class.java)
                 startActivity(intent)
             }
+            R.id.retrofit -> {
+                var intent =  Intent()
+                intent.setClass(this,RetrofitActivity()::class.java)
+                startActivity(intent)
+            }
         }
     }
 }

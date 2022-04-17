@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".OkhttpActivity"/>
         <activity android:name=".BindingActivity"/>
+        <activity android:name=".RetrofitActivity"/>
     </application>
 
 </manifest>

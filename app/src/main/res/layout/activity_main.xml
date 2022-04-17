@@ -22,6 +22,14 @@
         android:layout_height="60dp"
         android:onClick="gotoNext"
         android:text="DataBinding"/>
+    <Button
+        android:id="@+id/retrofit"
+        app:layout_constraintTop_toBottomOf="@id/dataBinding"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:onClick="gotoNext"
+        android:text="Retrofit"/>
 
 
 

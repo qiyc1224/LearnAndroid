@@ -8,6 +8,7 @@
     tools:context=".OkhttpActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/abl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,8 +23,19 @@
             app:popupTheme="@style/Theme.LearnAndroid.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
+<ScrollView
+    app:layout_constraintTop_toBottomOf="@id/abl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv"
 
-    <include layout="@layout/content_main" />
+        android:layout_width="match_parent"
+        android:textColor="#ff00ff"
+        android:hint="网络请求"
+
+        android:layout_height="wrap_content"/>
+</ScrollView>
 
 
 

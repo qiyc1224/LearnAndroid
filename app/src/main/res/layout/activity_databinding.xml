@@ -5,27 +5,36 @@
 <!--            name="start"-->
 <!--            type="com.qiyc.la.model.DataBindingModel" />-->
         <import type="com.qiyc.la.model.DataBindingModel"/>
+        <import type="com.qiyc.la.BindingActivity.Presenter"/>
         <variable
             name="start"
             type="DataBindingModel" />
+        <variable
+            name="index"
+            type="String" />
+        <variable
+            name="present"
+            type="Presenter" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
         android:id="@+id/tv_name"
         android:text="@{start.name}"
-        android:hint="xxx"
+        android:hint="姓名"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        bind:name="@{start.name}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
         android:id="@+id/tv_age"
         android:text="@{start.age}"
-        android:hint="xxxx"
+        android:hint="年龄"
         app:layout_constraintTop_toBottomOf="@id/tv_name"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="match_parent"
@@ -34,7 +43,31 @@
         android:id="@+id/iv_img"
         app:layout_constraintTop_toBottomOf="@id/tv_age"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="240dp"
+        android:layout_height="120dp"/>
+    <include layout="@layout/include_item"
+        app:layout_constraintTop_toBottomOf="@id/iv_img"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/include_ic"
+        app:start="@{start}"/>
+
+    <TextView
+        android:text="切换数据"
+        app:layout_constraintTop_toBottomOf="@id/include_ic"
+        android:id="@+id/btn"
+        android:gravity="center"
+        android:textColor="#ff00ff"
+        android:layout_width="match_parent"
+        android:onClick="@{()->present.onClick(start)}"
+        android:layout_height="60dp"/>
+    <EditText
+        android:text="@={start.age}"
+        app:layout_constraintTop_toBottomOf="@id/btn"
+        android:id="@+id/edt"
+        android:layout_width="match_parent"
+        android:afterTextChanged="@{present.agchanged}"
+        android:layout_height="60dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
